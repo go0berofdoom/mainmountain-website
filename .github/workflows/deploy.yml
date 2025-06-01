@@ -1,0 +1,25 @@
+name: Deploy Website to EC2 Server
+
+on:
+  push:
+    branches:
+      - main  # Or whatever your main branch is called (e.g., master)
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest # Uses a fresh Linux environment provided by GitHub Actions
+
+    steps:
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3 # Using a specific version is good practice
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "🚀 Starting deployment triggered by push to ${{ github.ref_name }}..."
+            # Execute your update script on the server
+            # The script uses sudo internally for necessary commands
+            /usr/local/bin/sync_mainmountain_website.sh 
+            echo "✅ Deployment script finished."
