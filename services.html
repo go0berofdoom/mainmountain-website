@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Main Mountain</title>
+    <meta name="description" content="Explore the professional services offered by Main Mountain including trash hauling, tractor work, landscaping, wood chipping, light excavation, and tree stump removal.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .page-header {
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/services-header.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+        }
+        
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+        
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .service-detail:nth-child(even) .service-detail-text {
+            direction: ltr;
+        }
+        
+        .service-detail-img {
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-detail-text h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .service-features {
+            margin-top: 1.5rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+        
+        .cta-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-box h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-box .btn {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            margin-top: 1rem;
+        }
+        
+        .cta-box .btn:hover {
+            background-color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-detail:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .service-detail-img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <!-- Logo placeholder -->
+                    <img src="images/logo-placeholder.png" alt="Main Mountain Logo">
+                    <h1>Main Mountain</h1>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link">Book Now</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Services</h1>
+    </div>
+
+    <!-- Services Detail Section -->
+    <section class="section">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Trash Hauling Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Trash Hauling</h3>
+                    <p>Our professional trash hauling service provides efficient and environmentally responsible removal of unwanted items, debris, and waste from your property. Whether you're cleaning out a garage, completing a renovation project, or just need to dispose of accumulated junk, our team will handle the heavy lifting and proper disposal.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Residential and commercial waste removal</li>
+                        <li><i class="fas fa-check-circle"></i> Construction debris cleanup</li>
+                        <li><i class="fas fa-check-circle"></i> Yard waste removal</li>
+                        <li><i class="fas fa-check-circle"></i> Responsible disposal practices</li>
+                        <li><i class="fas fa-check-circle"></i> Prompt and reliable service</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Tractor Work Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Tractor Work</h3>
+                    <p>Our tractor services provide efficient solutions for a variety of property needs. With professional-grade equipment and experienced operators, we can handle projects of all sizes with precision and care. From preparing land for landscaping to clearing areas for construction, our tractor work services save you time and effort.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Land grading and leveling</li>
+                        <li><i class="fas fa-check-circle"></i> Soil tilling and preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Trenching for irrigation or utilities</li>
+                        <li><i class="fas fa-check-circle"></i> Brush clearing and lot preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Post hole digging</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Landscaping Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Landscaping</h3>
+                    <p>Transform your outdoor space with our comprehensive landscaping services. We create beautiful, functional landscapes that enhance your property's appearance and value. From initial design to installation and maintenance, our team works closely with you to bring your vision to life while considering your property's unique characteristics.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Landscape design and planning</li>
+                        <li><i class="fas fa-check-circle"></i> Hardscape installation (patios, walkways)</li>
+                        <li><i class="fas fa-check-circle"></i> Planting and garden installation</li>
+                        <li><i class="fas fa-check-circle"></i> Lawn installation and renovation</li>
+                        <li><i class="fas fa-check-circle"></i> Drainage solutions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Wood Chipping Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Wood Chipping</h3>
+                    <p>Our wood chipping services provide an efficient way to manage branches, brush, and other woody debris on your property. Instead of hauling away this material, we can convert it into useful mulch that can be used in your landscaping or removed from your property. This environmentally friendly approach reduces waste and can provide valuable material for your garden.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> On-site chipping of branches and brush</li>
+                        <li><i class="fas fa-check-circle"></i> Conversion of debris into usable mulch</li>
+                        <li><i class="fas fa-check-circle"></i> Cleanup after tree trimming or removal</li>
+                        <li><i class="fas fa-check-circle"></i> Mulch spreading available</li>
+                        <li><i class="fas fa-check-circle"></i> Debris removal if desired</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Light Excavation Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Light Excavation</h3>
+                    <p>Our light excavation services are perfect for smaller projects that require precision and care. We have the equipment and expertise to handle a variety of excavation needs without the excessive disruption of larger machinery. Whether you're preparing for a new structure or need to access underground utilities, our team will complete the job efficiently and safely.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Foundation preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Drainage ditches and swales</li>
+                        <li><i class="fas fa-check-circle"></i> Utility trenching</li>
+                        <li><i class="fas fa-check-circle"></i> Pool and pond excavation</li>
+                        <li><i class="fas fa-check-circle"></i> Site preparation for structures</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-detail">
+                <div class="service-detail-img">
+                    <!-- Image placeholder -->
+                    <p>Tree Stump Removal Image</p>
+                </div>
+                <div class="service-detail-text">
+                    <h3>Tree Stump Removal</h3>
+                    <p>Remove unsightly and problematic tree stumps from your property with our professional stump removal service. Left in place, stumps can be hazardous, attract pests, and prevent you from fully utilizing your outdoor space. Our team uses specialized equipment to completely remove stumps and their root systems, allowing you to reclaim your yard.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Complete stump extraction</li>
+                        <li><i class="fas fa-check-circle"></i> Root system removal</li>
+                        <li><i class="fas fa-check-circle"></i> Site restoration after removal</li>
+                        <li><i class="fas fa-check-circle"></i> Multiple stump removal discounts</li>
+                        <li><i class="fas fa-check-circle"></i> Debris cleanup included</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Ready to Transform Your Property?</h3>
+                <p>Contact us today to discuss your project needs and get a free estimate.</p>
+                <a href="booking.html" class="btn">Book Our Services</a>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Main Mountain</h3>
+                    <p>Professional landscaping and excavation services in Cameron Park, CA.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#trash-hauling">Trash Hauling</a></li>
+                        <li><a href="#tractor-work">Tractor Work</a></li>
+                        <li><a href="#landscaping">Landscaping</a></li>
+                        <li><a href="#wood-chipping">Wood Chipping</a></li>
+                        <li><a href="#light-excavation">Light Excavation</a></li>
+                        <li><a href="#tree-stump-removal">Tree Stump Removal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Main Mountain. All Rights Reserved. | Licensed & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Our Services - Main Mountain</title>
+    <meta name="description" content="Book Main Mountain's professional landscaping and excavation services. Schedule trash hauling, tractor work, landscaping, wood chipping, light excavation, or tree stump removal.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .page-header {
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/booking-header.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+        }
+        
+        .booking-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .booking-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: -1;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .step-text {
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .booking-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-option {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .service-option:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .service-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(44, 110, 73, 0.1);
+        }
+        
+        .service-option i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .form-control.error {
+            border-color: #dc3545;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .booking-steps {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .booking-steps::before {
+                display: none;
+            }
+            
+            .step {
+                flex-direction: row;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .step-number {
+                margin-bottom: 0;
+                margin-right: 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <!-- Logo placeholder -->
+                    <img src="images/logo-placeholder.png" alt="Main Mountain Logo">
+                    <h1>Main Mountain</h1>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link">Book Now</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Book Our Services</h1>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Choose Service</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Schedule Date</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Provide Details</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Confirmation</div>
+                </div>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h2 style="margin-bottom: 1.5rem; color: var(--primary-color);">Schedule Your Service</h2>
+                    <p>Please fill out the form below to request a service appointment. We'll contact you to confirm your booking and provide a free estimate.</p>
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    Your booking request has been submitted successfully! We'll contact you shortly to confirm your appointment.
+                </div>
+                
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">1. Select Service</h3>
+                        <div class="service-options">
+                            <div class="service-option" data-service="trash-hauling">
+                                <i class="fas fa-trash"></i> Trash Hauling
+                            </div>
+                            <div class="service-option" data-service="tractor-work">
+                                <i class="fas fa-tractor"></i> Tractor Work
+                            </div>
+                            <div class="service-option" data-service="landscaping">
+                                <i class="fas fa-leaf"></i> Landscaping
+                            </div>
+                            <div class="service-option" data-service="wood-chipping">
+                                <i class="fas fa-tree"></i> Wood Chipping
+                            </div>
+                            <div class="service-option" data-service="light-excavation">
+                                <i class="fas fa-truck-pickup"></i> Light Excavation
+                            </div>
+                            <div class="service-option" data-service="stump-removal">
+                                <i class="fas fa-cut"></i> Tree Stump Removal
+                            </div>
+                        </div>
+                        <input type="hidden" id="service" name="service" required>
+                        
+                        <h3 style="margin-bottom: 1.5rem; margin-top: 2rem; color: var(--primary-color);">2. Schedule Date & Time</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" class="form-control" required>
+                                    <option value="">Select a time</option>
+                                    <option value="morning">Morning (7AM - 11AM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                    <option value="evening">Evening (4PM - 6PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-bottom: 1.5rem; margin-top: 2rem; color: var(--primary-color);">3. Your Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingName">Full Name</label>
+                                <input type="text" id="bookingName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPhone">Phone Number</label>
+                                <input type="tel" id="bookingPhone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingEmail">Email Address</label>
+                                <input type="email" id="bookingEmail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Service Address</label>
+                                <input type="text" id="address" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="details">Project Details</label>
+                            <textarea id="details" class="form-control" rows="5" placeholder="Please provide any additional details about your project that will help us prepare..."></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>How did you hear about us?</label>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <label style="margin-right: 1rem;">
+                                    <input type="radio" name="referral" value="search"> Online Search
+                                </label>
+                                <label style="margin-right: 1rem;">
+                                    <input type="radio" name="referral" value="social"> Social Media
+                                </label>
+                                <label style="margin-right: 1rem;">
+                                    <input type="radio" name="referral" value="friend"> Friend/Family
+                                </label>
+                                <label>
+                                    <input type="radio" name="referral" value="other"> Other
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="margin-top: 1rem;">Submit Booking Request</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Need Immediate Assistance?</h3>
+                <p>Call us directly at <a href="tel:5309577675">(530) 957-7675</a> to speak with Dennis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Main Mountain</h3>
+                    <p>Professional landscaping and excavation services in Cameron Park, CA.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Trash Hauling</a></li>
+                        <li><a href="services.html">Tractor Work</a></li>
+                        <li><a href="services.html">Landscaping</a></li>
+                        <li><a href="services.html">Wood Chipping</a></li>
+                        <li><a href="services.html">Light Excavation</a></li>
+                        <li><a href="services.html">Tree Stump Removal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Main Mountain. All Rights Reserved. | Licensed & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Service selection functionality
+        const serviceOptions = document.querySelectorAll('.service-option');
+        const serviceInput = document.getElementById('service');
+        
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Update hidden input value
+                serviceInput.value = this.getAttribute('data-service');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation is handled in main.js
+            // This would be where you'd add AJAX form submission
+            
+            // For demo purposes, show success message
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset();
+            serviceOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
