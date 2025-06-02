@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Don't prevent default form submission - let Formspree handle it
             
             // Basic validation
             let valid = true;
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message');
             
             if (!name.value.trim()) {
+                e.preventDefault();
                 valid = false;
                 showError(name, 'Name is required');
             } else {
@@ -59,9 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (!email.value.trim()) {
+                e.preventDefault();
                 valid = false;
                 showError(email, 'Email is required');
             } else if (!isValidEmail(email.value)) {
+                e.preventDefault();
                 valid = false;
                 showError(email, 'Please enter a valid email');
             } else {
@@ -69,17 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (!message.value.trim()) {
+                e.preventDefault();
                 valid = false;
                 showError(message, 'Message is required');
             } else {
                 removeError(message);
             }
             
-            if (valid) {
-                // Here you would typically send the form data to a server
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            }
+            // Form will submit to Formspree if valid
         });
     }
     
