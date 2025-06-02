@@ -248,7 +248,7 @@ header {
     min-width: 300px;
 }
 
-.veteran-badge {
+.local-badge {
     display: inline-flex;
     align-items: center;
     background-color: #4CAF50;
@@ -258,7 +258,7 @@ header {
     margin-top: 20px;
 }
 
-.veteran-badge i {
+.local-badge i {
     margin-right: 8px;
 }
 
